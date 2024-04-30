@@ -49,11 +49,12 @@ def load_test_data(path):
 
 def main():
 
-    train = load_train_data("../data/train.csv", val_split=False)
-    test = load_test_data("../data/test.csv")
+    train = load_train_data("data/train.csv", val_split=False)
+    test = load_test_data("data/test.csv")
 
     train_X, test_X = get_seq(train), get_seq(test)
     train_y = np.array(train.target.values.tolist())
+
     test_id = test.id.values.tolist()
 
     model = sklearn.linear_model.LinearRegression()
